@@ -27,8 +27,9 @@ function setup()
 {
       createCanvas(400, 400);
       Button = createButton('Start');
-      Button.position(250, 200);
+      Button.position(175, 200);
       Button.mousePressed(Start);
+  
       // Button = createButton('Start');
       // Button.position(250, 200);
       // Button.mousePressed(Start);
@@ -55,7 +56,7 @@ function draw()
    else {
       Button.hide();
     }
-      background(220);
+      background(20);
       //image(img, rx, r1, 64, 64);
       text(frameCount, 300, 50);
 
@@ -64,10 +65,8 @@ if (frameCount >= 500 && frameCount< 1000 &&r1 >390)
       textSize(30);
         frameCount==1000
          textSize(18)
-        text('You Looose', 170, 150);
+        text('You Looose', 165, 180);
         noLoop()
-       
-  
 } 
   if (frameCount >= 2000 && frameCount< 3000 &&r1 >390) 
 {           
@@ -75,7 +74,7 @@ if (frameCount >= 500 && frameCount< 1000 &&r1 >390)
       text('Level 2', 50, 40);
       frameCount==2000
       textSize(20)  
-      text('You Win', 100, 100);
+      text('You Looose', 100, 100);
       noLoop()
       
   
@@ -87,13 +86,18 @@ if (frameCount >= 3000 && frameCount< 4000 &&r1 >390)
       textSize(30);
       text('Level 3', 30, 40);
         frameCount==3000
+   textSize(20)  
+      text('You Looose', 100, 100);
           noLoop()
+       
         text('Level 3', 30, 40);  
 }  if (frameCount >= 4000 && frameCount< 5000 &&r1 >390)
 {
       textSize(30);
       text('Level 4', 30, 40);
   frameCount==4000
+   textSize(20)  
+      text('You Looose', 100, 100);
           noLoop()
         text('Level 4', 30, 40);
 
@@ -102,6 +106,8 @@ if (frameCount >= 3000 && frameCount< 4000 &&r1 >390)
       textSize(30);
       text('Level 5', 30, 40);
   frameCount==5000
+   textSize(20)  
+      text('You Looose', 100, 100);
           noLoop()
         text('Level 5', 30, 40);
 
@@ -111,7 +117,20 @@ if (frameCount >= 3000 && frameCount< 4000 &&r1 >390)
       textSize(30);
       text('Level 6', 30, 40);
   frameCount==6000
+   textSize(20)  
+      text('You Looose', 100, 100);
           noLoop()
+} if (frameCount >= 6000  && r1 <390)
+{
+      textSize(30);
+      text('Level 6', 30, 40);
+  frameCount==6000
+       textSize(20)  
+      text('You Win', 170, 100);
+        noLoop()
+       Button = createButton('Start');
+      Button.position(175, 200);
+      Button.mousePressed(Start);
 } 
 
         if(frameCount < 300)
@@ -248,12 +267,17 @@ if(r1==390)
 {
       textSize(100);
       text('Game Over', 0, 100);
-      play=true
+      play=true;
 }
 if(r1>390)
 {
+      sized = 120
       textSize(30);
-      text('GameOver', 120, 200);
+      stroke(1)
+      text('GameOver', sized++, sized++);
+      if('GameOver')
+      text('GameOver', sized++, sized++);
+
       textSize(18);
       text('Score',300,70);
  }
@@ -268,4 +292,4 @@ function keyPressed(){
   }if(keyCode == LEFT_ARROW){
     x = x -s
    }
-}
+}         
